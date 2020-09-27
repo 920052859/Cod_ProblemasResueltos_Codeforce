@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:background="#FFFFFF"
+    tools:context=".ActivityCreaTuPerfil">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textViewUsername"
+            android:layout_width="313dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="48dp"
+            android:layout_marginTop="128dp"
+            android:text="Username"
+            android:textSize="20dp"
+            android:textColor="#070707" />
+
+        <EditText
+            android:id="@+id/editTextUsername"
+            android:layout_width="315dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:hint="Inserte su Username"
+            android:inputType="textPersonName"
+            android:textColorHint="#070707" />
+
+        <TextView
+            android:id="@+id/textViewCodigoUser"
+            android:layout_width="313dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="49dp"
+            android:layout_marginTop="30dp"
+            android:text="Codigo de asegurado "
+            android:textSize="20dp"
+            android:textColor="#070707" />
+
+        <EditText
+            android:id="@+id/editTextCodigoUser"
+            android:layout_width="315dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:hint="Inserte su codigo"
+            android:inputType="textPersonName"
+            android:textColorHint="#070707" />
+
+        <TextView
+            android:id="@+id/textViewDni"
+            android:layout_width="313dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="30dp"
+            android:text="DNI"
+            android:textSize="20dp"
+            android:textColor="#070707"
+            android:textColorHint="#070707" />
+
+        <EditText
+            android:id="@+id/editTextDni"
+            android:layout_width="315dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:hint="Inserte su DNI"
+            android:inputType="textPersonName"
+            android:textColor="#070707"
+            android:textColorHint="#070707" />
+
+        <TextView
+            android:id="@+id/textViewPhone"
+            android:layout_width="313dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="30dp"
+            android:text="Phone Number "
+            android:textSize="20dp"
+            android:textColor="#070707" />
+
+        <EditText
+            android:id="@+id/editTextPhone"
+            android:layout_width="315dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="47dp"
+            android:layout_marginTop="17dp"
+            android:ems="10"
+            android:hint="Insert your Phone Number "
+            android:inputType="textPersonName"
+            android:textColorHint="#070707" />
+
+        <Button
+            android:id="@+id/buttonSavePerfil"
+            android:layout_width="145dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="133dp"
+            android:layout_marginLeft="133dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="133dp"
+            android:layout_marginRight="133dp"
+            android:background="#3DD9C1"
+            android:text="SAVE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhone" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="425dp"
+        android:layout_height="67dp"
+        android:background="#3DD9C1"
+        android:text="Crea tu perfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

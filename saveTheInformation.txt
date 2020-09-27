@@ -1,0 +1,85 @@
+class ActivityCreaTuPerfil : AppCompatActivity() {
+
+    lateinit var edithTextUsername:EditText
+    lateinit var editTextCodigoUser:EditText
+    lateinit var editTextDni:EditText
+    lateinit var editTextPhone:EditText
+    lateinit var buttonSave:Button
+
+     // private lateinit var bdReference:DatabaseReference
+    private lateinit var database:FirebaseDatabase
+   // private lateinit var auth:FirebaseAuth
+
+    val bundle:Bundle?=intent.extras
+    val email:String?=bundle?.getString("email")
+    val provider:String?=bundle?.getString("provider")
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_crea_tu_perfil)
+        //-----------------------------------------------------
+        // Write a message to the database
+      //  val database = FirebaseDatabase.getInstance()
+    //    val myRef = database.getReference("message")
+
+   //     myRef.setValue("Hello, World!")
+        //------------------------------------------------------
+        // llamar a los ints
+
+        edithTextUsername=findViewById(R.id.editTextUsername)
+        editTextCodigoUser=findViewById(R.id.editTextCodigoUser)
+        editTextDni=findViewById(R.id.editTextDni)
+        editTextPhone=findViewById(R.id.editTextPhone)
+        buttonSave=findViewById(R.id.buttonSavePerfil)
+
+        buttonSave.setOnClickListener{
+            saveHero()
+
+        }
+    }
+
+
+    private fun saveHero(){
+        val username: String = edithTextUsername.text.toString()
+        val codigoDeAsegurado: String = editTextCodigoUser.text.toString()
+        val numeroDni: String = editTextDni.text.toString()
+        val numeroPhone: String = editTextPhone.text.toString()
+
+        if (TextUtils.isEmpty(username) && TextUtils.isEmpty(codigoDeAsegurado) && TextUtils.isEmpty(numeroDni) && TextUtils.isEmpty(numeroPhone)) {
+
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Error")
+            builder.setMessage("Se ha producido un error autenticando al usuario intente otra vez xd")
+            builder.setPositiveButton("Aceptar", null)
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+            return
+
+        }
+
+
+            val ref = FirebaseDatabase.getInstance().getReference("heroes")
+        val heroId: String = ref.push().key.toString()
+
+        val hero = Hero(heroId, username, codigoDeAsegurado, numeroDni, numeroPhone)
+
+        ref.child(heroId).setValue(hero).addOnCompleteListener {
+           Toast.makeText(applicationContext, "Esto se guardo successfully",Toast.LENGTH_LONG).show()
+        }
+
+
+    }
+
+
+         /*  database= FirebaseDatabase.getInstance()
+            auth= FirebaseAuth.getInstance()
+            bdReference=database.reference.child("HealthRecordFirebase") */
+
+     /*  buttonSavePerfil.setOnClickListener {
+            createNewData()
+            val intent: Intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+        } */
+    }

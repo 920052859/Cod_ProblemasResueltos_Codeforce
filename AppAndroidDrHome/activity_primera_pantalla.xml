@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animationCache="true"
+    android:background="#FFFFFF"
+    tools:context=".ActivityPrimeraPantalla">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="105dp"
+        android:layout_marginEnd="93dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/cinta" />
+
+    <Button
+        android:id="@+id/buttonToSingUp"
+        android:layout_width="197dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="40dp"
+        android:background="#3DD9C1"
+        android:drawableLeft="@drawable/ic_person_add_black_24dp"
+        android:text="Sing Up"
+        android:textColor="#070707"
+        app:layout_constraintBottom_toTopOf="@+id/buttonToLogIn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonToLogIn"
+        android:layout_width="199dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="148dp"
+        android:background="#BAE3DC"
+        android:drawableLeft="@drawable/ic_accessibility_black_24dp"
+        android:text="Log In"
+        android:textColor="@android:color/widget_edittext_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
